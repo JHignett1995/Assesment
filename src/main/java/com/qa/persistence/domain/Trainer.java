@@ -4,18 +4,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "TRAINERS")
 public class Trainer {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long trainerID;
 	
-	@OneToOne @JoinColumn(name="room_id",nullable = false)
-	private Classroom room;
+	
+	@OneToOne(mappedBy = "classroom")
+	private Classroom classroom;
 	
 	private String firstName;
 	private String lastName;
@@ -26,17 +27,17 @@ public class Trainer {
 
 	public Trainer(Long id, String firstName, String lastName) {
 		super();
-		this.id = id;
+		this.trainerID = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
 
 	public Long getId() {
-		return id;
+		return trainerID;
 	}
 
 	public void setId(Long id) {
-		this.id = id;
+		this.trainerID = id;
 	}
 
 	public String getFirstName() {
@@ -56,11 +57,11 @@ public class Trainer {
 	}
 
 	public Classroom getRoom() {
-		return room;
+		return classroom;
 	}
 
 	public void setRoom(Classroom room) {
-		this.room = room;
+		this.classroom = room;
 	}
 	
 

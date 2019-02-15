@@ -11,10 +11,10 @@ import javax.persistence.Table;
 @Table(name="TRAINEES")
 public class Trainee {
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
+	private Long traineeID;
 	
-	@ManyToOne @JoinColumn(name="room_id", nullable = false)
-	private Classroom room;
+	@ManyToOne @JoinColumn(name="classroomID", nullable = false)
+	private Classroom classroom;
 	
 	private String firstName;
 	private String lastName;
@@ -25,17 +25,17 @@ public class Trainee {
 
 	public Trainee(Long id, String firstName, String lastName) {
 		super();
-		this.id = id;
+		this.traineeID = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
 
 	public Long getId() {
-		return id;
+		return traineeID;
 	}
 
 	public void setId(Long id) {
-		this.id = id;
+		this.traineeID = id;
 	}
 
 	public String getFirstName() {

@@ -28,9 +28,9 @@ public class TraineeDBRepositoryTest {
 	
 	private JSONUtil util;
 	
-	private static final String MOCK_DATA_ARRAY = "[{\"id\":1,\"firstName\":\"Jordan\",\"lastName\":\"Hignett\"}]";
+	private static final String MOCK_DATA_ARRAY = "[{\"traineeID\":1,\"firstName\":\"Jordan\",\"lastName\":\"Hignett\"}]";
 
-	private static final String MOCK_OBJECT = "{\"id\":1,\"firstName\":\"Jordan\",\"lastName\":\"Hignett\"}";
+	private static final String MOCK_OBJECT = "{\"traineeID\":1,\"firstName\":\"Jordan\",\"lastName\":\"Hignett\"}";
 	
 	@Before
 	public void setup() {
